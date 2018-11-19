@@ -24,3 +24,27 @@ start :- write('Welcome to the battlefield!\n'),
     write('E = enemy\n'),
     write('- = accessible\n'),
     write('X = inaccessible\n').
+
+help :- write('\nquit. -- Keluar dari permainan\n'),
+    write('look. -- Melihat keadaan petak sekitar\n'),
+    write('n,s,e,w. -- Untuk berjalan kearah utara, selatan, timur, dan barat\n'),
+    write('map. -- Menampilkan peta wilayah permainan\n'),
+    write('take(Object). -- Mengambil sebuah object\n'),
+    write('drop(Object). -- Menjatuhkan sebuah object\n'),
+    write('use(Object). -- Menggunakan sebuah object\n'),
+    write('attack. -- Menyerang musuh yang terdapat di petak yang sama\n'),
+    write('status. -- Menampilkan status permainan\n'),
+    write('save(Filename). -- Save permainan\n'),
+    write('load(Filename). -- Load permainan sebelumnya\n').
+
+peta([[-,-,-,-,-,-,-,-,-,-],[-,-,-,'P',-,-,-,-,-,-],[-,-,-,-,-,-,-,-,-,-],[-,-,-,-,-,-,-,-,-,-],
+[-,-,-,-,-,-,-,-,-,-],[-,-,-,-,-,-,-,-,-,-],[-,-,-,-,-,-,-,-,-,-],[-,-,-,-,-,-,-,-,-,-],
+[-,-,-,-,-,-,-,-,-,-],[-,-,-,-,-,-,-,-,-,-]]).
+
+printlist([]) :- write('').
+printlist([H|T]) :- write(H), printlist(T).
+
+printpeta([]) :- write('').
+printpeta([H|T]) :- printlist(H),nl, printpeta(T).
+
+tampilpeta :- peta(X),printpeta(X).
