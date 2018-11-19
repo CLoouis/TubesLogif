@@ -49,15 +49,7 @@ printpeta([H|T]) :- printlist(H),nl, printpeta(T).
 
 tampilpeta :- peta(X),printpeta(X).
 
-% W = weapon
-% A = armor
-% M = medicine
-% O = ammo
-% P = player
-% E = enemy
-% - = accessible
-% X = inaccessible
-% Enemy > Medicine > Weapon > Armor > Ammo > pemain
+
 % Tes ada apa di lantai
 ground(5,5,enemy).
 ground(5,5,ponco).
@@ -151,16 +143,6 @@ lookpemainpeluru10(X,Y) :- ground(X,Y,peluru10),
                 write('You see 10 peluru on the ground. '), ! .
 
 lookpemainpeluru10(A,B).
-
-% Enemy > Medicine > Weapon > Armor > Ammo > pemain
-% W = weapon
-% A = armor
-% M = medicine
-% O = ammo
-% P = player
-% E = enemy
-% - = accessible
-% X = inaccessible
 
 weapon(shotgun).
 weapon(pistol).
