@@ -48,3 +48,33 @@ printpeta([]) :- write('').
 printpeta([H|T]) :- printlist(H),nl, printpeta(T).
 
 tampilpeta :- peta(X),printpeta(X).
+
+weapon(shotgun).
+weapon(pistol).
+
+ammo(peluru10).
+ammo(peluru5).
+
+medicine(tolakangin).
+medicine(madurasa).
+
+armor(nametag).
+armor(ponco).
+
+% W = weapon
+% A = armor
+% M = medicine
+% O = ammo
+% P = player
+% E = enemy
+% - = accessible
+% X = inaccessible
+% Enemy > Medicine > Weapon > Armor > Ammo > pemain
+% Tes ada apa di lantai
+ground(5,5,ponco).
+ground(5,6,ponco).
+ground(5,4,ponco).
+ground(4,5,ponco).
+ground(6,5,ponco).
+
+look :- 
