@@ -354,7 +354,43 @@ e :- player(X,Y,_,_,_,_),
         asserta(player(X,Y1,A,B,C,D)),
         retract(count_move(Z)),
         Znew is Z + 1,
-        asserta(count_move(Znew))
+        asserta(count_move(Znew)),
+        player(Xnew,Ynew,_,_,_,_),
+        ground(Xnew,Ynew,Nama_tempat,_,_,_,_,_),
+        Xnew1 is Xnew -1, Xnew2 is Xnew + 1,
+        Ynew1 is Ynew -1, Ynew2 is Ynew + 1,
+        peta(Mnew), element_matriks(Mnew,Xnew1,Ynew,Utara),
+        element_matriks(Mnew,Xnew2,Ynew,Selatan),
+        element_matriks(Mnew,Xnew,Ynew1,Barat),
+        element_matriks(Mnew,Xnew,Ynew2,Timur),
+        (Utara = 'X' ->
+            write('Di utara adalah tempat mati.\n')
+        ; !,
+            ground(Xnew1,Ynew,Nama_tempat_utara,_,_,_,_,_),
+            write('Di utara adalah '),
+            write(Nama_tempat_utara),nl
+        ),
+        (Barat = 'X' ->
+            write('Di barat adalah tempat mati.\n')
+        ; !,
+            ground(Xnew,Ynew1,Nama_tempat_barat,_,_,_,_,_),
+            write('Di barat adalah '),
+            write(Nama_tempat_barat),nl
+        ),
+        (Timur = 'X' ->
+            write('Di timur adalah tempat mati.\n')
+        ;!,
+            ground(Xnew,Ynew2,Nama_tempat_timur,_,_,_,_,_),
+            write('Di timur adalah '),
+            write(Nama_tempat_timur),nl
+        ),
+        (Selatan = 'X' ->
+            write('Di selatan adalah tempat mati.\n')
+        ;!,
+            ground(Xnew2,Ynew,Nama_tempat_selatan,_,_,_,_,_),
+            write('Di selatan adalah '),
+            write(Nama_tempat_selatan),nl
+        ) ,!
     ; !,
         write('Wilayah tersebut tidak dapat dikunjungi.\n')
     ).
@@ -371,7 +407,43 @@ w :- player(X,Y,_,_,_,_),
         asserta(player(X,Y1,A,B,C,D)),
         retract(count_move(Z)),
         Znew is Z + 1,
-        asserta(count_move(Znew))
+        asserta(count_move(Znew)),
+        player(Xnew,Ynew,_,_,_,_),
+        ground(Xnew,Ynew,Nama_tempat,_,_,_,_,_),
+        Xnew1 is Xnew -1, Xnew2 is Xnew + 1,
+        Ynew1 is Ynew -1, Ynew2 is Ynew + 1,
+        peta(Mnew), element_matriks(Mnew,Xnew1,Ynew,Utara),
+        element_matriks(Mnew,Xnew2,Ynew,Selatan),
+        element_matriks(Mnew,Xnew,Ynew1,Barat),
+        element_matriks(Mnew,Xnew,Ynew2,Timur),
+        (Utara = 'X' ->
+            write('Di utara adalah tempat mati.\n')
+        ; !,
+            ground(Xnew1,Ynew,Nama_tempat_utara,_,_,_,_,_),
+            write('Di utara adalah '),
+            write(Nama_tempat_utara),nl
+        ),
+        (Barat = 'X' ->
+            write('Di barat adalah tempat mati.\n')
+        ; !,
+            ground(Xnew,Ynew1,Nama_tempat_barat,_,_,_,_,_),
+            write('Di barat adalah '),
+            write(Nama_tempat_barat),nl
+        ),
+        (Timur = 'X' ->
+            write('Di timur adalah tempat mati.\n')
+        ;!,
+            ground(Xnew,Ynew2,Nama_tempat_timur,_,_,_,_,_),
+            write('Di timur adalah '),
+            write(Nama_tempat_timur),nl
+        ),
+        (Selatan = 'X' ->
+            write('Di selatan adalah tempat mati.\n')
+        ;!,
+            ground(Xnew2,Ynew,Nama_tempat_selatan,_,_,_,_,_),
+            write('Di selatan adalah '),
+            write(Nama_tempat_selatan),nl
+        ) ,!
     ; !,
         write('Wilayah tersebut tidak dapat dikunjungi.\n')
     ).
@@ -388,7 +460,43 @@ s :- player(X,Y,_,_,_,_),
         asserta(player(X1,Y,A,B,C,D)),
         retract(count_move(Z)),
         Znew is Z + 1,
-        asserta(count_move(Znew))
+        asserta(count_move(Znew)),
+        player(Xnew,Ynew,_,_,_,_),
+        ground(Xnew,Ynew,Nama_tempat,_,_,_,_,_),
+        Xnew1 is Xnew -1, Xnew2 is Xnew + 1,
+        Ynew1 is Ynew -1, Ynew2 is Ynew + 1,
+        peta(Mnew), element_matriks(Mnew,Xnew1,Ynew,Utara),
+        element_matriks(Mnew,Xnew2,Ynew,Selatan),
+        element_matriks(Mnew,Xnew,Ynew1,Barat),
+        element_matriks(Mnew,Xnew,Ynew2,Timur),
+        (Utara = 'X' ->
+            write('Di utara adalah tempat mati.\n')
+        ; !,
+            ground(Xnew1,Ynew,Nama_tempat_utara,_,_,_,_,_),
+            write('Di utara adalah '),
+            write(Nama_tempat_utara),nl
+        ),
+        (Barat = 'X' ->
+            write('Di barat adalah tempat mati.\n')
+        ; !,
+            ground(Xnew,Ynew1,Nama_tempat_barat,_,_,_,_,_),
+            write('Di barat adalah '),
+            write(Nama_tempat_barat),nl
+        ),
+        (Timur = 'X' ->
+            write('Di timur adalah tempat mati.\n')
+        ;!,
+            ground(Xnew,Ynew2,Nama_tempat_timur,_,_,_,_,_),
+            write('Di timur adalah '),
+            write(Nama_tempat_timur),nl
+        ),
+        (Selatan = 'X' ->
+            write('Di selatan adalah tempat mati.\n')
+        ;!,
+            ground(Xnew2,Ynew,Nama_tempat_selatan,_,_,_,_,_),
+            write('Di selatan adalah '),
+            write(Nama_tempat_selatan),nl
+        ) ,!
     ; !,
         write('Wilayah tersebut tidak dapat dikunjungi.\n')
     ).
