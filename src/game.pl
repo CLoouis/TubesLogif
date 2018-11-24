@@ -39,115 +39,115 @@ enemy(10,11,11,shotgun).
 :- dynamic(ground/8). %untuk deskripsi peta.
 %ground(absis,ordinat,nama,enemy,[medicine],[weapon],[armor],[ammo])
 %enemy = 1 berarti ada enemy, 0 jika tidak ada
-ground(2,2,'ITB',[],[],[],[],[]).
-ground(2,3,'ITB',[],[],[],[],[]).
-ground(2,4,'ITB',[],[],[],[],[]).
-ground(2,5,'Unpad',[],[],[],[],[]).
-ground(2,6,'Unpad',[],[],[],[],[]).
-ground(2,7,'Unpad',[],[],[],[],[]).
-ground(2,8,'IPB',[],[],[],[],[]).
-ground(2,9,'IPB',[],[],[],[],[]).
-ground(2,10,'Unikom',[],[],[],[],[]).
-ground(2,11,'Unikom',[],[],[],[],[]).
-
-ground(3,2,'ITB',[],[],[],[],[]).
-ground(3,3,'ITB',[],[],[],[],[]).
-ground(3,4,'ITB',[],[],[],[],[]).
-ground(3,5,'Unpad',[],[],[],[],[]).
-ground(3,6,'Unpad',[],[],[],[],[]).
-ground(3,7,'Unpad',[],[],[],[],[]).
-ground(3,8,'IPB',[],[],[],[],[]).
-ground(3,9,'IPB',[],[],[],[],[]).
-ground(3,10,'Unikom',[],[],[],[],[]).
-ground(3,11,'Unikom',[],[],[],[],[]).
-
-ground(4,2,'ITB',[],[],[],[],[]).
-ground(4,3,'ITB',[],[],[],[],[]).
-ground(4,4,'ITB',[],['tolakangin'],['pistol'],['nametag'],['pelurushotgun']).
-ground(4,5,'Unpad',[],[],[],[],[]).
-ground(4,6,'Unpad',[],[],[],[],['pelurupistol']).
-ground(4,7,'Unpad',[],[],[],[],[]).
-ground(4,8,'IPB',[],[],[],[],[]).
-ground(4,9,'IPB',[],[],[],[],[]).
-ground(4,10,'Unikom',[],[],[],[],[]).
-ground(4,11,'Unikom',[],[],[],[],[]).
-
-ground(5,2,'ITB',[],[],[],[],[]).
-ground(5,3,'ITB',[],[],[],[],[]).
-ground(5,4,'ITB',[],[],[],[],[]).
-ground(5,5,'Binus',[],['tolakangin'],[],[],['pelurushotgun']).
-ground(5,6,'Binus',[],[],['pistol'],[],[]).
-ground(5,7,'Binus',[],[],[],[],[]).
-ground(5,8,'ITS',[],[],[],[],[]).
-ground(5,9,'ITS',[],[],[],[],[]).
-ground(5,10,'ITHB',[],[],[],[],[]).
-ground(5,11,'ITHB',[],[],[],[],[]).
-
-ground(6,2,'ITB',[],[],[],[],[]).
-ground(6,3,'ITB',[],[],[],[],[]).
-ground(6,4,'ITB',[],[],[],[],[]).
-ground(6,5,'Binus',[],[],[],[],[]).
-ground(6,6,'Binus',[],[],[],['nametag'],[]).
-ground(6,7,'Binus',[],[],[],[],[]).
-ground(6,8,'ITS',[],[],[],[],[]).
-ground(6,9,'ITS',[],[],[],[],[]).
-ground(6,10,'ITHB',[],[],[],[],[]).
-ground(6,11,'ITHB',[],[],[],[],[]).
-
-ground(7,2,'ITB',[],[],[],[],[]).
-ground(7,3,'ITB',[],[],[],[],[]).
-ground(7,4,'ITB',[],[],[],[],[]).
-ground(7,5,'Binus',[],[],[],[],[]).
-ground(7,6,'Binus',[],[],[],[],[]).
-ground(7,7,'Binus',[],[],[],[],[]).
-ground(7,8,'ITS',[],[],[],[],[]).
-ground(7,9,'ITS',[],[],[],[],[]).
-ground(7,10,'ITHB',[],[],[],[],[]).
-ground(7,11,'ITHB',[],[],[],[],[]).
-
-ground(8,2,'UGM',[],[],[],[],[]).
-ground(8,3,'UGM',[],[],[],[],[]).
-ground(8,4,'UGM',[],[],[],[],[]).
-ground(8,5,'UGM',[],[],[],[],[]).
-ground(8,6,'Unpar',[],[],[],[],[]).
-ground(8,7,'Unpar',[],[],[],[],[]).
-ground(8,8,'Unpar',[],[],[],[],[]).
-ground(8,9,'Unpar',[],[],[],[],[]).
-ground(8,10,'UNS',[],[],[],[],[]).
-ground(8,11,'UNS',[],[],[],[],[]).
-
-ground(9,2,'UGM',[],[],[],[],[]).
-ground(9,3,'UGM',[],[],[],[],[]).
-ground(9,4,'UGM',[],[],[],[],[]).
-ground(9,5,'UGM',[],[],[],[],[]).
-ground(9,6,'Unpar',[],[],[],[],[]).
-ground(9,7,'Unpar',[],[],[],[],[]).
-ground(9,8,'Unpar',[],[],[],[],[]).
-ground(9,9,'Unpar',[],[],[],[],[]).
-ground(9,10,'UNS',[],[],[],[],[]).
-ground(9,11,'UNS',[],[],[],[],[]).
-
-ground(10,2,'UGM',[],[],[],[],[]).
-ground(10,3,'UGM',[],[],[],[],[]).
-ground(10,4,'UGM',[],[],[],[],[]).
-ground(10,5,'UGM',[],[],[],[],[]).
-ground(10,6,'Unpar',[],[],[],[],[]).
-ground(10,7,'Unpar',[],[],[],[],[]).
-ground(10,8,'Unpar',[],[],[],[],[]).
-ground(10,9,'Unpar',[],[],[],[],[]).
-ground(10,10,'UNS',[],[],[],[],[]).
-ground(10,11,'UNS',[],[],[],[],[]).
-
-ground(11,2,'UGM',[],[],[],[],[]).
-ground(11,3,'UGM',[],[],[],[],[]).
-ground(11,4,'UGM',[],[],[],[],[]).
-ground(11,5,'UGM',[],[],[],[],[]).
-ground(11,6,'Unpar',[],[],[],[],[]).
-ground(11,7,'Unpar',[],[],[],[],[]).
-ground(11,8,'Unpar',[],[],[],[],[]).
-ground(11,9,'Unpar',[],[],[],[],[]).
-ground(11,10,'UNS',[],[],[],[],[]).
-ground(11,11,'UNS',[],[],[],[],[]).
+% ground(2,2,'ITB',[],[],[],[],[]).
+% ground(2,3,'ITB',[],[],[],[],[]).
+% ground(2,4,'ITB',[],[],[],[],[]).
+% ground(2,5,'Unpad',[],[],[],[],[]).
+% ground(2,6,'Unpad',[],[],[],[],[]).
+% ground(2,7,'Unpad',[],[],[],[],[]).
+% ground(2,8,'IPB',[],[],[],[],[]).
+% ground(2,9,'IPB',[],[],[],[],[]).
+% ground(2,10,'Unikom',[],[],[],[],[]).
+% ground(2,11,'Unikom',[],[],[],[],[]).
+%
+% ground(3,2,'ITB',[],[],[],[],[]).
+% ground(3,3,'ITB',[],[],[],[],[]).
+% ground(3,4,'ITB',[],[],[],[],[]).
+% ground(3,5,'Unpad',[],[],[],[],[]).
+% ground(3,6,'Unpad',[],[],[],[],[]).
+% ground(3,7,'Unpad',[],[],[],[],[]).
+% ground(3,8,'IPB',[],[],[],[],[]).
+% ground(3,9,'IPB',[],[],[],[],[]).
+% ground(3,10,'Unikom',[],[],[],[],[]).
+% ground(3,11,'Unikom',[],[],[],[],[]).
+%
+% ground(4,2,'ITB',[],[],[],[],[]).
+% ground(4,3,'ITB',[],[],[],[],[]).
+% ground(4,4,'ITB',[],[],[],[],[]).
+% ground(4,5,'Unpad',[],[],[],[],[]).
+% ground(4,6,'Unpad',[],[],[],[],[]).
+% ground(4,7,'Unpad',[],[],[],[],[]).
+% ground(4,8,'IPB',[],[],[],[],[]).
+% ground(4,9,'IPB',[],[],[],[],[]).
+% ground(4,10,'Unikom',[],[],[],[],[]).
+% ground(4,11,'Unikom',[],[],[],[],[]).
+%
+% ground(5,2,'ITB',[],[],[],[],[]).
+% ground(5,3,'ITB',[],[],[],[],[]).
+% ground(5,4,'ITB',[],[],[],[],[]).
+% ground(5,5,'Binus',[],[],[],[],[]).
+% ground(5,6,'Binus',[],[],[],[],[]).
+% ground(5,7,'Binus',[],[],[],[],[]).
+% ground(5,8,'ITS',[],[],[],[],[]).
+% ground(5,9,'ITS',[],[],[],[],[]).
+% ground(5,10,'ITHB',[],[],[],[],[]).
+% ground(5,11,'ITHB',[],[],[],[],[]).
+%
+% ground(6,2,'ITB',[],[],[],[],[]).
+% ground(6,3,'ITB',[],[],[],[],[]).
+% ground(6,4,'ITB',[],[],[],[],[]).
+% ground(6,5,'Binus',[],[],[],[],[]).
+% ground(6,6,'Binus',[],[],[],[],[]).
+% ground(6,7,'Binus',[],[],[],[],[]).
+% ground(6,8,'ITS',[],[],[],[],[]).
+% ground(6,9,'ITS',[],[],[],[],[]).
+% ground(6,10,'ITHB',[],[],[],[],[]).
+% ground(6,11,'ITHB',[],[],[],[],[]).
+%
+% ground(7,2,'ITB',[],[],[],[],[]).
+% ground(7,3,'ITB',[],[],[],[],[]).
+% ground(7,4,'ITB',[],[],[],[],[]).
+% ground(7,5,'Binus',[],[],[],[],[]).
+% ground(7,6,'Binus',[],[],[],[],[]).
+% ground(7,7,'Binus',[],[],[],[],[]).
+% ground(7,8,'ITS',[],[],[],[],[]).
+% ground(7,9,'ITS',[],[],[],[],[]).
+% ground(7,10,'ITHB',[],[],[],[],[]).
+% ground(7,11,'ITHB',[],[],[],[],[]).
+%
+% ground(8,2,'UGM',[],[],[],[],[]).
+% ground(8,3,'UGM',[],[],[],[],[]).
+% ground(8,4,'UGM',[],[],[],[],[]).
+% ground(8,5,'UGM',[],[],[],[],[]).
+% ground(8,6,'Unpar',[],[],[],[],[]).
+% ground(8,7,'Unpar',[],[],[],[],[]).
+% ground(8,8,'Unpar',[],[],[],[],[]).
+% ground(8,9,'Unpar',[],[],[],[],[]).
+% ground(8,10,'UNS',[],[],[],[],[]).
+% ground(8,11,'UNS',[],[],[],[],[]).
+%
+% ground(9,2,'UGM',[],[],[],[],[]).
+% ground(9,3,'UGM',[],[],[],[],[]).
+% ground(9,4,'UGM',[],[],[],[],[]).
+% ground(9,5,'UGM',[],[],[],[],[]).
+% ground(9,6,'Unpar',[],[],[],[],[]).
+% ground(9,7,'Unpar',[],[],[],[],[]).
+% ground(9,8,'Unpar',[],[],[],[],[]).
+% ground(9,9,'Unpar',[],[],[],[],[]).
+% ground(9,10,'UNS',[],[],[],[],[]).
+% ground(9,11,'UNS',[],[],[],[],[]).
+%
+% ground(10,2,'UGM',[],[],[],[],[]).
+% ground(10,3,'UGM',[],[],[],[],[]).
+% ground(10,4,'UGM',[],[],[],[],[]).
+% ground(10,5,'UGM',[],[],[],[],[]).
+% ground(10,6,'Unpar',[],[],[],[],[]).
+% ground(10,7,'Unpar',[],[],[],[],[]).
+% ground(10,8,'Unpar',[],[],[],[],[]).
+% ground(10,9,'Unpar',[],[],[],[],[]).
+% ground(10,10,'UNS',[],[],[],[],[]).
+% ground(10,11,'UNS',[],[],[],[],[]).
+%
+% ground(11,2,'UGM',[],[],[],[],[]).
+% ground(11,3,'UGM',[],[],[],[],[]).
+% ground(11,4,'UGM',[],[],[],[],[]).
+% ground(11,5,'UGM',[],[],[],[],[]).
+% ground(11,6,'Unpar',[],[],[],[],[]).
+% ground(11,7,'Unpar',[],[],[],[],[]).
+% ground(11,8,'Unpar',[],[],[],[],[]).
+% ground(11,9,'Unpar',[],[],[],[],[]).
+% ground(11,10,'UNS',[],[],[],[],[]).
+% ground(11,11,'UNS',[],[],[],[],[]).
 
 %Update ketika health <0 atau musuh sudah mati semua, atau petak pemain sudah menjadi deadzone
 update_status_permainan :- player(Absis,Ordinat,Health,_,_,_,_),
@@ -173,6 +173,87 @@ update_enemy_ground(N) :- enemy(N,Absis,Ordinat,Enemy_Weapon),
                 retract(ground(Absis,Ordinat,Nama,Enemy,Medicine,Weapon,Armor,Ammo)),
                 asserta(ground(Absis,Ordinat,Nama,[Enemy_Weapon],Medicine,Weapon,Armor,Ammo)),
                 NNew is N - 1, update_enemy_ground(NNew),!.
+
+create_player :- random(2,12,Absis), random(2,12,Ordinat),
+                retract(player(_,_,_,_,_,_,_)),
+                asserta(player(Absis,Ordinat,100,0,none,0,[])).
+
+create_peta :- retract(peta(_)),
+                asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
+                ['X',-,-,-,-,-,-,-,-,-,-,'X'],['X',-,-,-,-,-,-,-,-,-,-,'X'],['X',-,-,-,-,-,-,-,-,-,-,'X'],
+                ['X',-,-,-,-,-,-,-,-,-,-,'X'],['X',-,-,-,-,-,-,-,-,-,-,'X'],['X',-,-,-,-,-,-,-,-,-,-,'X'],
+                ['X',-,-,-,-,-,-,-,-,-,-,'X'],['X',-,-,-,-,-,-,-,-,-,-,'X'],['X',-,-,-,-,-,-,-,-,-,-,'X'],
+                ['X',-,-,-,-,-,-,-,-,-,-,'X'],
+                ['X','X','X','X','X','X','X','X','X','X','X','X']])),!.
+
+place_enemy(N) :- random(2,12,Absis), random(2,12,Ordinat),
+                (N < 6 ->
+                    retract(enemy(N,_,_,_)),
+                    asserta(enemy(N,Absis,Ordinat,pistol))
+                ;
+                    retract(enemy(N,_,_,_)),
+                    asserta(enemy(N,Absis,Ordinat,shotgun))
+                ),!.
+
+create_enemy(0) :- write(''),!.
+create_enemy(N) :- place_enemy(N), Nnew is N - 1, create_enemy(Nnew),!.
+
+create_item(X,0) :- write('').
+create_item(X,N) :- random(2,12,Absis), random(2,12,Ordinat), ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground),
+                        weapon(Weapon), ammo(Ammo), medicine(Medicine), armor(Armor),
+                        (is_member(X,Weapon) ->
+                            gabung(Weapon_ground,[X],New_Weapon_ground),
+                            retract(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                            asserta(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,New_Weapon_ground,Armor_ground,Ammo_ground))
+                        ; is_member(X,Ammo) ->
+                            gabung(Ammo_ground,[X],New_Ammo_ground),
+                            retract(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                            asserta(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,New_Ammo_ground))
+                        ; is_member(X,Medicine) ->
+                            gabung(Medicine_ground,[X],New_Medicine_ground),
+                            retract(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                            asserta(ground(Absis,Ordinat,Nama,Enemy,New_Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground))
+                        ; is_member(X,Armor) ->
+                            gabung(Armor_ground,[X],New_Armor_ground),
+                            retract(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                            asserta(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,New_Armor_ground,Ammo_ground))
+                        ), Nnew is N - 1, create_item(X,Nnew),!.
+
+delete_prev_ground_sebaris(M,1) :- write('').
+delete_prev_ground_sebaris(M,N) :- retract(ground(M,N,_,_,_,_,_,_)), Nnew is N - 1, delete_prev_ground_sebaris(M,Nnew).
+
+delete_prev_ground(1,N) :- write('').
+delete_prev_ground(M,N) :- delete_prev_ground_sebaris(M,N), Mnew is M - 1, delete_prev_ground(Mnew,N).
+
+create_ground(Absis,Ordinat) :-
+                        (Absis < 5, Ordinat < 5 -> %Distrik1
+                            Nama = 'ITB'
+                        ; Absis < 5, Ordinat > 4, Ordinat < 8 -> %Distrik2
+                            Nama = 'UI'
+                        ; Absis < 6, Ordinat > 7, Ordinat < 12 -> %Distrik3
+                            Nama = 'UGM'
+                        ; Absis > 4, Absis < 8, Ordinat < 5 -> %Distrik4
+                            Nama = 'Unpad'
+                        ; Absis > 4, Absis < 8, Ordinat > 4, Ordinat < 8 -> %Distrik5
+                            Nama = 'Binus'
+                        ; Absis > 5, Absis < 10, Ordinat > 7, Ordinat < 12 -> %Distrik6
+                            Nama = 'Unpar'
+                        ; Absis > 7, Absis < 12, Ordinat < 5 -> %Distrik7
+                            Nama = 'Unikom'
+                        ; Absis > 7, Absis < 12, Ordinat > 4, Ordinat < 8 -> %Distrik 8
+                            Nama = 'ITHB'
+                        ; Absis  > 9, Absis < 12, Ordinat > 7, Ordinat < 12 -> %Distrik 9
+                            Nama = 'Binus'
+                        ),
+                        asserta(ground(Absis,Ordinat,Nama,[],[],[],[],[])).
+
+create_ground_baris(M,1) :- write('').
+create_ground_baris(M,N) :- create_ground(M,N), Nnew is N - 1, create_ground_baris(M,Nnew).
+
+create_new_ground(1,N) :- write('').
+create_new_ground(M,N) :- create_ground_baris(M,N), Mnew is M -1, create_new_ground(Mnew,N).
+
+create_game_ground :- delete_prev_ground(11,11), create_new_ground(11,11),!.
 
 %Memulai permainan dan akan menerima fakta-fakta fresh yang tidak bergantung pada permainan sebelumnya
 start :- write('Welcome to the battlefield!\n'),
@@ -204,6 +285,23 @@ start :- write('Welcome to the battlefield!\n'),
     write('X = inaccessible\n'),
     retract(status_permainan(_)),
     asserta(status_permainan(on)),
+    create_new_ground(11,11),
+    create_peta,
+    create_game_ground,
+    create_player,
+    create_enemy(10),
+    create_item(pistol,1),
+    create_item(shotgun,1),
+    create_item(pelurupistol,1),
+    create_item(pelurushotgun,1),
+    create_item(madurasa,1),
+    create_item(tolakangin,1),
+    create_item(nametag,1),
+    create_item(ponco,1),
+    retract(count_move(_)),
+    asserta(count_move(0)),
+    retract(count_enemy(_)),
+    asserta(count_enemy(10)),
     update_enemy_ground(10).
 
 %Menampilkan daftar perintah yang dapat ditampilkan, jika status permainan off maka
@@ -930,16 +1028,24 @@ attack :- update_status_permainan, status_permainan(Status),
                     retract(player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory)),
                     asserta(player(Absis,Ordinat,Health,0,Weapon_player,Ammo_player,Inventory)),
                     ganti_health(True_Damage),
-                    %Drop senjata yang digunakan enemy
-                    first_element(Enemy,First_Enemy),
-                    delete_first(Enemy,New_Enemy),
-                    gabung(Weapon_ground,[First_Enemy],New_Weapon_ground),
-                    retract(ground(Absis,Ordinat,Nama_Ground,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
-                    asserta(ground(Absis,Ordinat,Nama_Ground,New_Enemy,Medicine_ground,New_Weapon_ground,Armor_ground,Ammo_ground)),
-                    %Mengurangi jumlah enemy
-                    retract(count_enemy(Total_Enemy)),
-                    New_Total_Enemy is Total_Enemy - 1,
-                    asserta(count_enemy(New_Total_Enemy))
+                    (Weapon_player \= none ->
+                        (Ammo_player \= 0 ->
+                            %Drop senjata yang digunakan enemy
+                            first_element(Enemy,First_Enemy),
+                            delete_first(Enemy,New_Enemy),
+                            gabung(Weapon_ground,[First_Enemy],New_Weapon_ground),
+                            retract(ground(Absis,Ordinat,Nama_Ground,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                            asserta(ground(Absis,Ordinat,Nama_Ground,New_Enemy,Medicine_ground,New_Weapon_ground,Armor_ground,Ammo_ground)),
+                            %Mengurangi jumlah enemy
+                            retract(count_enemy(Total_Enemy)),
+                            New_Total_Enemy is Total_Enemy - 1,
+                            asserta(count_enemy(New_Total_Enemy))
+                        ; !,
+                            write('Anda tidak memiliki peluru saat ini')
+                        )
+                    ; !,
+                        write('Anda tidak memiliki senjata saat ini')
+                    )
                 ; !,
                     write('Tidak ada musuh di petak Anda sekarang')
                 )
