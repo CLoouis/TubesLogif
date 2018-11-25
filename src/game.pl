@@ -38,6 +38,25 @@ enemy(10,11,11,shotgun,1).
 
 :- dynamic(ground/8). %untuk deskripsi peta.
 
+save:- open('save.pl',write,S), set_output(S),
+        write(':- dynamic(player/7).'), nl,
+        write(':- dynamic(peta/1).'), nl,
+        write(':- dynamic(count_enemy/1).'), nl,
+        write(':- dynamic(count_move/1).'), nl,
+        write(':- dynamic(status_permainan/1).'), nl,
+        write(':- dynamic(enemy/5).'), nl,
+        write(':- dynamic(ground/8).'), nl,
+        listing, close(S).
+
+saveload:-  retractall(player(_,_,_,_,_,_,_)),
+            retractall(peta(_)),
+            retractall(count_enemy(_)),
+            retractall(count_move(_)),
+            retractall(status_permainan(_)),
+            retractall(enemy(_,_,_,_,_)),
+            retractall(ground(_,_,_,_,_,_,_,_)),
+            consult('save.pl').
+
 %Update ketika health <0 atau musuh sudah mati semua, atau petak pemain sudah menjadi deadzone
 update_status_permainan :- player(Absis,Ordinat,Health,_,_,_,_),
                         count_enemy(Enemy),
@@ -515,7 +534,7 @@ look :- update_status_permainan, status_permainan(Status),
             look_koordinat(Absis1,Ordinat1,C1),look_koordinat(Absis1,Ordinat,C2),look_koordinat(Absis1,Ordinat2,C3),!,
             look_koordinat(Absis,Ordinat1,C4),look_koordinat(Absis,Ordinat,C5),look_koordinat(Absis,Ordinat2,C6),!,
             look_koordinat(Absis2,Ordinat1,C7),look_koordinat(Absis2,Ordinat,C8),look_koordinat(Absis2,Ordinat2,C9),!,
-            write('Anda berada di'),write(Nama),nl, write('Di petak Anda sekarang :\n'),
+            write('Anda berada di '),write(Nama),nl, write('Di petak Anda sekarang :\n'),
             (Enemy \= [] ->
                 panjang(Enemy,NBelmt_Enemy),
                 write('\tAda '), write(NBelmt_Enemy), write(' musuh'),nl
