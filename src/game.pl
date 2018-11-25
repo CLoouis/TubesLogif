@@ -499,7 +499,7 @@ look_koordinat(Absis,Ordinat,Char) :-
         ; Armor \= [] ->
             Char = 'A'
         ; Ammo \= [] ->
-            Char = 'T'
+            Char = 'O'
         ; Absis = AbsisP, Ordinat = OrdinatP ->
             Char = 'P'
         ;
@@ -515,7 +515,7 @@ look :- update_status_permainan, status_permainan(Status),
             look_koordinat(Absis1,Ordinat1,C1),look_koordinat(Absis1,Ordinat,C2),look_koordinat(Absis1,Ordinat2,C3),!,
             look_koordinat(Absis,Ordinat1,C4),look_koordinat(Absis,Ordinat,C5),look_koordinat(Absis,Ordinat2,C6),!,
             look_koordinat(Absis2,Ordinat1,C7),look_koordinat(Absis2,Ordinat,C8),look_koordinat(Absis2,Ordinat2,C9),!,
-            write('Anda berada di'),write(Nama),nl, write('Di petak Anda sekarang :\n'),
+            write('Anda berada di '),write(Nama),nl, write('Di petak Anda sekarang :\n'),
             (Enemy \= [] ->
                 panjang(Enemy,NBelmt_Enemy),
                 write('\tAda '), write(NBelmt_Enemy), write(' musuh'),nl
