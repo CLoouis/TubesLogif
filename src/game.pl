@@ -24,130 +24,19 @@ status_permainan(on).
 :- dynamic(count_enemy/1).
 count_enemy(10).
 
-:- dynamic(enemy/4).
-enemy(1,2,2,pistol).
-enemy(2,3,3,pistol).
-enemy(3,4,4,pistol).
-enemy(4,5,5,pistol).
-enemy(5,6,6,pistol).
-enemy(6,7,7,shotgun).
-enemy(7,8,8,shotgun).
-enemy(8,9,9,shotgun).
-enemy(9,10,10,shotgun).
-enemy(10,11,11,shotgun).
+:- dynamic(enemy/5).
+enemy(1,2,2,pistol,1).
+enemy(2,3,3,pistol,1).
+enemy(3,4,4,pistol,1).
+enemy(4,5,5,pistol,1).
+enemy(5,6,6,pistol,1).
+enemy(6,7,7,shotgun,1).
+enemy(7,8,8,shotgun,1).
+enemy(8,9,9,shotgun,1).
+enemy(9,10,10,shotgun,1).
+enemy(10,11,11,shotgun,1).
 
 :- dynamic(ground/8). %untuk deskripsi peta.
-%ground(absis,ordinat,nama,enemy,[medicine],[weapon],[armor],[ammo])
-%enemy = 1 berarti ada enemy, 0 jika tidak ada
-% ground(2,2,'ITB',[],[],[],[],[]).
-% ground(2,3,'ITB',[],[],[],[],[]).
-% ground(2,4,'ITB',[],[],[],[],[]).
-% ground(2,5,'Unpad',[],[],[],[],[]).
-% ground(2,6,'Unpad',[],[],[],[],[]).
-% ground(2,7,'Unpad',[],[],[],[],[]).
-% ground(2,8,'IPB',[],[],[],[],[]).
-% ground(2,9,'IPB',[],[],[],[],[]).
-% ground(2,10,'Unikom',[],[],[],[],[]).
-% ground(2,11,'Unikom',[],[],[],[],[]).
-%
-% ground(3,2,'ITB',[],[],[],[],[]).
-% ground(3,3,'ITB',[],[],[],[],[]).
-% ground(3,4,'ITB',[],[],[],[],[]).
-% ground(3,5,'Unpad',[],[],[],[],[]).
-% ground(3,6,'Unpad',[],[],[],[],[]).
-% ground(3,7,'Unpad',[],[],[],[],[]).
-% ground(3,8,'IPB',[],[],[],[],[]).
-% ground(3,9,'IPB',[],[],[],[],[]).
-% ground(3,10,'Unikom',[],[],[],[],[]).
-% ground(3,11,'Unikom',[],[],[],[],[]).
-%
-% ground(4,2,'ITB',[],[],[],[],[]).
-% ground(4,3,'ITB',[],[],[],[],[]).
-% ground(4,4,'ITB',[],[],[],[],[]).
-% ground(4,5,'Unpad',[],[],[],[],[]).
-% ground(4,6,'Unpad',[],[],[],[],[]).
-% ground(4,7,'Unpad',[],[],[],[],[]).
-% ground(4,8,'IPB',[],[],[],[],[]).
-% ground(4,9,'IPB',[],[],[],[],[]).
-% ground(4,10,'Unikom',[],[],[],[],[]).
-% ground(4,11,'Unikom',[],[],[],[],[]).
-%
-% ground(5,2,'ITB',[],[],[],[],[]).
-% ground(5,3,'ITB',[],[],[],[],[]).
-% ground(5,4,'ITB',[],[],[],[],[]).
-% ground(5,5,'Binus',[],[],[],[],[]).
-% ground(5,6,'Binus',[],[],[],[],[]).
-% ground(5,7,'Binus',[],[],[],[],[]).
-% ground(5,8,'ITS',[],[],[],[],[]).
-% ground(5,9,'ITS',[],[],[],[],[]).
-% ground(5,10,'ITHB',[],[],[],[],[]).
-% ground(5,11,'ITHB',[],[],[],[],[]).
-%
-% ground(6,2,'ITB',[],[],[],[],[]).
-% ground(6,3,'ITB',[],[],[],[],[]).
-% ground(6,4,'ITB',[],[],[],[],[]).
-% ground(6,5,'Binus',[],[],[],[],[]).
-% ground(6,6,'Binus',[],[],[],[],[]).
-% ground(6,7,'Binus',[],[],[],[],[]).
-% ground(6,8,'ITS',[],[],[],[],[]).
-% ground(6,9,'ITS',[],[],[],[],[]).
-% ground(6,10,'ITHB',[],[],[],[],[]).
-% ground(6,11,'ITHB',[],[],[],[],[]).
-%
-% ground(7,2,'ITB',[],[],[],[],[]).
-% ground(7,3,'ITB',[],[],[],[],[]).
-% ground(7,4,'ITB',[],[],[],[],[]).
-% ground(7,5,'Binus',[],[],[],[],[]).
-% ground(7,6,'Binus',[],[],[],[],[]).
-% ground(7,7,'Binus',[],[],[],[],[]).
-% ground(7,8,'ITS',[],[],[],[],[]).
-% ground(7,9,'ITS',[],[],[],[],[]).
-% ground(7,10,'ITHB',[],[],[],[],[]).
-% ground(7,11,'ITHB',[],[],[],[],[]).
-%
-% ground(8,2,'UGM',[],[],[],[],[]).
-% ground(8,3,'UGM',[],[],[],[],[]).
-% ground(8,4,'UGM',[],[],[],[],[]).
-% ground(8,5,'UGM',[],[],[],[],[]).
-% ground(8,6,'Unpar',[],[],[],[],[]).
-% ground(8,7,'Unpar',[],[],[],[],[]).
-% ground(8,8,'Unpar',[],[],[],[],[]).
-% ground(8,9,'Unpar',[],[],[],[],[]).
-% ground(8,10,'UNS',[],[],[],[],[]).
-% ground(8,11,'UNS',[],[],[],[],[]).
-%
-% ground(9,2,'UGM',[],[],[],[],[]).
-% ground(9,3,'UGM',[],[],[],[],[]).
-% ground(9,4,'UGM',[],[],[],[],[]).
-% ground(9,5,'UGM',[],[],[],[],[]).
-% ground(9,6,'Unpar',[],[],[],[],[]).
-% ground(9,7,'Unpar',[],[],[],[],[]).
-% ground(9,8,'Unpar',[],[],[],[],[]).
-% ground(9,9,'Unpar',[],[],[],[],[]).
-% ground(9,10,'UNS',[],[],[],[],[]).
-% ground(9,11,'UNS',[],[],[],[],[]).
-%
-% ground(10,2,'UGM',[],[],[],[],[]).
-% ground(10,3,'UGM',[],[],[],[],[]).
-% ground(10,4,'UGM',[],[],[],[],[]).
-% ground(10,5,'UGM',[],[],[],[],[]).
-% ground(10,6,'Unpar',[],[],[],[],[]).
-% ground(10,7,'Unpar',[],[],[],[],[]).
-% ground(10,8,'Unpar',[],[],[],[],[]).
-% ground(10,9,'Unpar',[],[],[],[],[]).
-% ground(10,10,'UNS',[],[],[],[],[]).
-% ground(10,11,'UNS',[],[],[],[],[]).
-%
-% ground(11,2,'UGM',[],[],[],[],[]).
-% ground(11,3,'UGM',[],[],[],[],[]).
-% ground(11,4,'UGM',[],[],[],[],[]).
-% ground(11,5,'UGM',[],[],[],[],[]).
-% ground(11,6,'Unpar',[],[],[],[],[]).
-% ground(11,7,'Unpar',[],[],[],[],[]).
-% ground(11,8,'Unpar',[],[],[],[],[]).
-% ground(11,9,'Unpar',[],[],[],[],[]).
-% ground(11,10,'UNS',[],[],[],[],[]).
-% ground(11,11,'UNS',[],[],[],[],[]).
 
 %Update ketika health <0 atau musuh sudah mati semua, atau petak pemain sudah menjadi deadzone
 update_status_permainan :- player(Absis,Ordinat,Health,_,_,_,_),
@@ -169,9 +58,11 @@ update_status_permainan :- player(Absis,Ordinat,Health,_,_,_,_),
 
 %Mengupdate ground berdasarkan data dari enemy
 update_enemy_ground(0) :- write('').
-update_enemy_ground(N) :- enemy(N,Absis,Ordinat,Enemy_Weapon),
+update_enemy_ground(N) :- enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy),
+                ground(Absis,Ordinat,Nama,Enemy,Medicine,Weapon,Armor,Ammo),
+                gabung(Enemy,[Enemy_Weapon],New_Enemy),
                 retract(ground(Absis,Ordinat,Nama,Enemy,Medicine,Weapon,Armor,Ammo)),
-                asserta(ground(Absis,Ordinat,Nama,[Enemy_Weapon],Medicine,Weapon,Armor,Ammo)),
+                asserta(ground(Absis,Ordinat,Nama,New_Enemy,Medicine,Weapon,Armor,Ammo)),
                 NNew is N - 1, update_enemy_ground(NNew),!.
 
 create_player :- random(2,12,Absis), random(2,12,Ordinat),
@@ -188,17 +79,105 @@ create_peta :- retract(peta(_)),
 
 place_enemy(N) :- random(2,12,Absis), random(2,12,Ordinat),
                 (N < 6 ->
-                    retract(enemy(N,_,_,_)),
-                    asserta(enemy(N,Absis,Ordinat,pistol))
+                    retract(enemy(N,_,_,_,_)),
+                    asserta(enemy(N,Absis,Ordinat,pistol,1))
                 ;
-                    retract(enemy(N,_,_,_)),
-                    asserta(enemy(N,Absis,Ordinat,shotgun))
+                    retract(enemy(N,_,_,_,_)),
+                    asserta(enemy(N,Absis,Ordinat,shotgun,1))
                 ),!.
 
 create_enemy(0) :- write(''),!.
 create_enemy(N) :- place_enemy(N), Nnew is N - 1, create_enemy(Nnew),!.
 
-create_item(X,0) :- write('').
+update_enemy_position(0) :- write('').
+update_enemy_position(N) :- enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy), random(1,5,Random), peta(M), element_matriks(M,Absis,Ordinat,CEnemy),
+                            (CEnemy \= 'X' ->
+                                (Random = 1 -> %musuh keatas
+                                    Absis1 is Absis - 1,
+                                    element_matriks(M,Absis1,Ordinat,C),
+                                    (C \= 'X' ->
+                                        %hilangkan enemy di petak absis,ordinat
+                                        ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground),
+                                        delete_by_value(Enemy,Enemy_Weapon,New_Enemy),
+                                        retract(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                                        asserta(ground(Absis,Ordinat,Nama,New_Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                                        %tambahkan enemy di petak tempat dia pindah
+                                        ground(Absis1,Ordinat,Nama9,Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9),
+                                        gabung(Enemy9,[Enemy_Weapon],New_Enemy9),
+                                        retract(ground(Absis1,Ordinat,Nama9,Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9)),
+                                        asserta(ground(Absis1,Ordinat,Nama9,New_Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9)),
+                                        %updaete enemy
+                                        retract(enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy)),
+                                        asserta(enemy(N,Absis1,Ordinat,Enemy_Weapon,Status_Enemy))
+                                    ;
+                                        write('')
+                                    )
+                                ; Random = 2 -> %musuh ke bawah
+                                    Absis1 is Absis + 1,
+                                    element_matriks(M,Absis1,Ordinat,C),
+                                    (C \= 'X' ->
+                                        %hilangkan enemy di petak absis,ordinat
+                                        ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground),
+                                        delete_by_value(Enemy,Enemy_Weapon,New_Enemy),
+                                        retract(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                                        asserta(ground(Absis,Ordinat,Nama,New_Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                                        %tambahkan enemy di petak tempat dia pindah
+                                        ground(Absis1,Ordinat,Nama9,Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9),
+                                        gabung(Enemy9,[Enemy_Weapon],New_Enemy9),
+                                        retract(ground(Absis1,Ordinat,Nama9,Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9)),
+                                        asserta(ground(Absis1,Ordinat,Nama9,New_Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9)),
+                                        %update enemy
+                                        retract(enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy)),
+                                        asserta(enemy(N,Absis1,Ordinat,Enemy_Weapon,Status_Enemy))
+                                    ;
+                                        write('')
+                                    )
+                                ; Random = 3 -> %musuh ke kiri
+                                    Ordinat1 is Ordinat - 1,
+                                    element_matriks(M,Absis,Ordinat1,C),
+                                    (C \= 'X' ->
+                                        %hilangkan enemy di petak absis,ordinat
+                                        ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground),
+                                        delete_by_value(Enemy,Enemy_Weapon,New_Enemy),
+                                        retract(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                                        asserta(ground(Absis,Ordinat,Nama,New_Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                                        %tambahkan enemy di petak tempat dia pindah
+                                        ground(Absis,Ordinat1,Nama9,Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9),
+                                        gabung(Enemy9,[Enemy_Weapon],New_Enemy9),
+                                        retract(ground(Absis,Ordinat1,Nama9,Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9)),
+                                        asserta(ground(Absis,Ordinat1,Nama9,New_Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9)),
+                                        %update enemy
+                                        retract(enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy)),
+                                        asserta(enemy(N,Absis,Ordinat1,Enemy_Weapon,Status_Enemy))
+                                    ;
+                                        write('')
+                                    )
+                                ; Random = 4 ->
+                                    Ordinat1 is Ordinat + 1,
+                                    element_matriks(M,Absis,Ordinat1,C),
+                                    (C \= 'X' ->
+                                        %hilangkan enemy di petak absis,ordinat
+                                        ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground),
+                                        delete_by_value(Enemy,Enemy_Weapon,New_Enemy),
+                                        retract(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                                        asserta(ground(Absis,Ordinat,Nama,New_Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
+                                        %tambahkan enemy di petak tempat dia pindah
+                                        ground(Absis,Ordinat1,Nama9,Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9),
+                                        gabung(Enemy9,[Enemy_Weapon],New_Enemy9),
+                                        retract(ground(Absis,Ordinat1,Nama9,Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9)),
+                                        asserta(ground(Absis,Ordinat1,Nama9,New_Enemy9,Medicine_ground9,Weapon_ground9,Armor_ground9,Ammo_ground9)),
+                                        %update enemy
+                                        retract(enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy)),
+                                        asserta(enemy(N,Absis,Ordinat1,Enemy_Weapon,Status_Enemy))
+                                    ;
+                                        write('')
+                                    )
+                                )
+                            ;
+                                write('')
+                            ), Nnew is N - 1, update_enemy_position(Nnew),!.
+
+create_item(_,0) :- write('').
 create_item(X,N) :- random(2,12,Absis), random(2,12,Ordinat), ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground),
                         weapon(Weapon), ammo(Ammo), medicine(Medicine), armor(Armor),
                         (is_member(X,Weapon) ->
@@ -219,10 +198,10 @@ create_item(X,N) :- random(2,12,Absis), random(2,12,Ordinat), ground(Absis,Ordin
                             asserta(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,New_Armor_ground,Ammo_ground))
                         ), Nnew is N - 1, create_item(X,Nnew),!.
 
-delete_prev_ground_sebaris(M,1) :- write('').
+delete_prev_ground_sebaris(_,1) :- write('').
 delete_prev_ground_sebaris(M,N) :- retract(ground(M,N,_,_,_,_,_,_)), Nnew is N - 1, delete_prev_ground_sebaris(M,Nnew).
 
-delete_prev_ground(1,N) :- write('').
+delete_prev_ground(1,_) :- write('').
 delete_prev_ground(M,N) :- delete_prev_ground_sebaris(M,N), Mnew is M - 1, delete_prev_ground(Mnew,N).
 
 create_ground(Absis,Ordinat) :-
@@ -247,13 +226,23 @@ create_ground(Absis,Ordinat) :-
                         ),
                         asserta(ground(Absis,Ordinat,Nama,[],[],[],[],[])).
 
-create_ground_baris(M,1) :- write('').
+create_ground_baris(_,1) :- write('').
 create_ground_baris(M,N) :- create_ground(M,N), Nnew is N - 1, create_ground_baris(M,Nnew).
 
-create_new_ground(1,N) :- write('').
-create_new_ground(M,N) :- create_ground_baris(M,N), Mnew is M -1, create_new_ground(Mnew,N).
+create_new_ground(1,_) :- write('').
+create_new_ground(M,N) :- create_ground_baris(M,N), Mnew is M -1, create_new_ground(Mnew,N),!.
 
 create_game_ground :- delete_prev_ground(11,11), create_new_ground(11,11),!.
+
+update_count_enemy(0) :- write('').
+update_count_enemy(N) :- enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy), peta(M), element_matriks(M,Absis,Ordinat,C), count_enemy(N_enemy),
+                        (Status_Enemy = 1, C = 'X' ->
+                            New_N_enemy is N_enemy - 1,
+                            retract(count_enemy(N_enemy)), asserta(count_enemy(New_N_enemy)),
+                            retract(enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy)), asserta(enemy(N,Absis,Ordinat,Enemy_Weapon,0))
+                        ;
+                            write('')
+                        ), Nnew is N - 1, update_count_enemy(Nnew),!.
 
 %Memulai permainan dan akan menerima fakta-fakta fresh yang tidak bergantung pada permainan sebelumnya
 start :- write('Welcome to the battlefield!\n'),
@@ -261,18 +250,6 @@ start :- write('Welcome to the battlefield!\n'),
     write('Be the last man standing and you will be remembered as one of the victors.'),
     write('\n\nAvailable commands :\n\n'),
     write('start. -- Memulai permainan'),
-    % write('help. -- Menampilkan daftar perintah yang dapat dijalankan\n'),
-    % write('quit. -- Keluar dari permainan\n'),
-    % write('look. -- Melihat keadaan petak sekitar\n'),
-    % write('n,s,e,w. -- Untuk berjalan kearah utara, selatan, timur, dan barat\n'),
-    % write('map. -- Menampilkan peta wilayah permainan\n'),
-    % write('take(Object). -- Mengambil sebuah object\n'),
-    % write('drop(Object). -- Menjatuhkan sebuah object\n'),
-    % write('use(Object). -- Menggunakan sebuah object\n'),
-    % write('attack. -- Menyerang musuh yang terdapat di petak yang sama\n'),
-    % write('status. -- Menampilkan status permainan\n'),
-    % write('save(Filename). -- Save permainan\n'),
-    % write('load(Filename). -- Load permainan sebelumnya\n'),
     help,
     write('\n\nLegends:\n\n'),
     write('W = weapon\n'),
@@ -290,14 +267,14 @@ start :- write('Welcome to the battlefield!\n'),
     create_game_ground,
     create_player,
     create_enemy(10),
-    create_item(pistol,1),
-    create_item(shotgun,1),
-    create_item(pelurupistol,1),
-    create_item(pelurushotgun,1),
-    create_item(madurasa,1),
-    create_item(tolakangin,1),
-    create_item(nametag,1),
-    create_item(ponco,1),
+    create_item(pistol,10),
+    create_item(shotgun,10),
+    create_item(pelurupistol,10),
+    create_item(pelurushotgun,10),
+    create_item(madurasa,10),
+    create_item(tolakangin,10),
+    create_item(nametag,10),
+    create_item(ponco,10),
     retract(count_move(_)),
     asserta(count_move(0)),
     retract(count_enemy(_)),
@@ -309,7 +286,7 @@ start :- write('Welcome to the battlefield!\n'),
 help :-     write('\nquit. -- Keluar dari permainan\n'),
             write('look. -- Melihat keadaan petak sekitar\n'),
             write('n,s,e,w. -- Untuk berjalan kearah utara, selatan, timur, dan barat\n'),
-            write('map. -- Menampilkan peta wilayah permainan\n'),
+            write('tampilpeta. -- Menampilkan peta wilayah permainan\n'),
             write('take(Object). -- Mengambil sebuah object\n'),
             write('drop(Object). -- Menjatuhkan sebuah object\n'),
             write('use(Object). -- Menggunakan sebuah object\n'),
@@ -392,13 +369,12 @@ updatepeta :- kecilkanpeta, peta(X),player(Absis,Ordinat,_,_,_,_,_),
                 retract(peta(X)),
                 asserta(peta(Y))
             ; !,
-                write('Anda sudah kalah karena berada di Deadzone\n'),
-                fail
+                update_status_permainan
             ).
 
 %mengecilkan peta karena daerah disekeliling jadi tidak accessible
 kecilkanpeta :- count_move(R),
-            (R = 10 -> !,
+            (R > 9, R < 20 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -407,8 +383,16 @@ kecilkanpeta :- count_move(R),
                 ['X','X',-,-,-,-,-,-,-,-,'X','X'],['X','X',-,-,-,-,-,-,-,-,'X','X'],
                 ['X','X',-,-,-,-,-,-,-,-,'X','X'],['X','X',-,-,-,-,-,-,-,-,'X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
-                ['X','X','X','X','X','X','X','X','X','X','X','X']]))
-            ; R = 20 -> !,
+                ['X','X','X','X','X','X','X','X','X','X','X','X']])),
+                update_count_enemy(10), count_enemy(N_enemy),
+                (N_enemy = 0 ->
+                        write('SELAMAT ANDA MENANG'),
+                        update_status_permainan
+                ;
+                    write('')
+                )
+
+            ; R > 19, R < 30 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -418,8 +402,15 @@ kecilkanpeta :- count_move(R),
                 ['X','X','X',-,-,-,-,-,-,'X','X','X'],['X','X','X',-,-,-,-,-,-,'X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
-                ['X','X','X','X','X','X','X','X','X','X','X','X']]))
-            ; R = 30 -> !,
+                ['X','X','X','X','X','X','X','X','X','X','X','X']])),
+                update_count_enemy(10),count_enemy(N_enemy),
+                (N_enemy = 0 ->
+                        write('SELAMAT ANDA MENANG'),
+                        update_status_permainan
+                ;
+                    write('')
+                )
+            ; R > 29, R < 40 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -430,8 +421,15 @@ kecilkanpeta :- count_move(R),
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
-                ['X','X','X','X','X','X','X','X','X','X','X','X']]))
-            ; R = 40 -> !,
+                ['X','X','X','X','X','X','X','X','X','X','X','X']])),
+                update_count_enemy(10),count_enemy(N_enemy),
+                (N_enemy = 0 ->
+                        write('SELAMAT ANDA MENANG'),
+                        update_status_permainan
+                ;
+                    write('')
+                )
+            ; R > 39, R < 50 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -444,8 +442,15 @@ kecilkanpeta :- count_move(R),
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
-                ['X','X','X','X','X','X','X','X','X','X','X','X']]))
-            ; R = 50 -> !,
+                ['X','X','X','X','X','X','X','X','X','X','X','X']])),
+                update_count_enemy(10),count_enemy(N_enemy),
+                (N_enemy = 0 ->
+                        write('SELAMAT ANDA MENANG'),
+                        update_status_permainan
+                ;
+                    write('')
+                )
+            ; R > 49 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -458,7 +463,14 @@ kecilkanpeta :- count_move(R),
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
-                ['X','X','X','X','X','X','X','X','X','X','X','X']]))
+                ['X','X','X','X','X','X','X','X','X','X','X','X']])),
+                update_count_enemy(10),count_enemy(N_enemy),
+                (N_enemy = 0 ->
+                        write('SELAMAT ANDA MENANG'),
+                        update_status_permainan
+                ;
+                    write('')
+                )
             ;
                 write('')
             ).
@@ -467,7 +479,7 @@ kecilkanpeta :- count_move(R),
 printpeta([]) :- write('').
 printpeta([H|T]) :- printlist(H),nl, printpeta(T).
 
-tampilpeta :- updatepeta, peta(X),printpeta(X).
+tampilpeta :- updatepeta, peta(X),printpeta(X),!.
 
 %Melihat apa yang ada pada peta pada absis dan koordinat tertentu dengan prioritas
 %Enemy > Medicine > Weapon > Armor > Ammo > Absis > Player
@@ -590,9 +602,10 @@ n :- update_status_permainan, status_permainan(Status),
                 ground(Xnew2,Ynew,Nama_tempat_selatan,_,_,_,_,_),
                 write('Di selatan adalah '),
                 write(Nama_tempat_selatan),nl
-            ) ,!
+            ) , update_enemy_position(10),updatepeta,!
         ; !,
-            write('Wilayah tersebut tidak dapat dikunjungi.\n')
+            write('Wilayah tersebut tidak dapat dikunjungi.\n'),
+            update_enemy_position(10),!
         )
     ; !,
         write('Anda sudah kalah atau sudah keluar dari permainan\n'),
@@ -650,9 +663,10 @@ e :- update_status_permainan, status_permainan(Status),
                 ground(Xnew2,Ynew,Nama_tempat_selatan,_,_,_,_,_),
                 write('Di selatan adalah '),
                 write(Nama_tempat_selatan),nl
-            ) ,!
+            ), update_enemy_position(10),updatepeta,!
         ; !,
-            write('Wilayah tersebut tidak dapat dikunjungi.\n')
+            write('Wilayah tersebut tidak dapat dikunjungi.\n'),
+            update_enemy_position(10),!
         )
     ; !,
         write('Anda sudah kalah atau sudah keluar dari permainan\n'),
@@ -710,9 +724,10 @@ w :- update_status_permainan, status_permainan(Status),
                 ground(Xnew2,Ynew,Nama_tempat_selatan,_,_,_,_,_),
                 write('Di selatan adalah '),
                 write(Nama_tempat_selatan),nl
-            ) ,!
+            ) , update_enemy_position(10),updatepeta,!
         ; !,
-            write('Wilayah tersebut tidak dapat dikunjungi.\n')
+            write('Wilayah tersebut tidak dapat dikunjungi.\n'),
+            update_enemy_position(10),!
         )
     ; !,
         write('Anda sudah kalah atau sudah keluar dari permainan\n'),
@@ -770,9 +785,10 @@ s :- update_status_permainan, status_permainan(Status),
                 ground(Xnew2,Ynew,Nama_tempat_selatan,_,_,_,_,_),
                 write('Di selatan adalah '),
                 write(Nama_tempat_selatan),nl
-            ) ,!
+            ) , update_enemy_position(10), updatepeta,!
         ; !,
-            write('Wilayah tersebut tidak dapat dikunjungi.\n')
+            write('Wilayah tersebut tidak dapat dikunjungi.\n'),
+            update_enemy_position(10),!
         )
     ; !,
         write('Anda sudah kalah atau sudah keluar dari permainan\n'),
@@ -921,8 +937,12 @@ drop(X) :- update_status_permainan, status_permainan(Status),
 %Ganti parameter health pada player
 ganti_health(X) :- player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory),
                     New_Health is (Health + X),
-                    retract(player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory)),
-                    asserta(player(Absis,Ordinat,New_Health,Armor_player,Weapon_player,Ammo_player,Inventory)).
+                    (New_Health > 100 ->
+                        write('')
+                    ;
+                        retract(player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory)),
+                        asserta(player(Absis,Ordinat,New_Health,Armor_player,Weapon_player,Ammo_player,Inventory))
+                    ).
 %Ganti paramater armor pada player
 ganti_armor(X) :- player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory),
                     retract(player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory)),
@@ -1039,7 +1059,14 @@ attack :- update_status_permainan, status_permainan(Status),
                             %Mengurangi jumlah enemy
                             retract(count_enemy(Total_Enemy)),
                             New_Total_Enemy is Total_Enemy - 1,
-                            asserta(count_enemy(New_Total_Enemy))
+                            (New_Total_Enemy = 0 ->
+                                    write('SELAMAT ANDA TELAH MENANG')
+                            ;
+                                write('')
+                            ),
+                            asserta(count_enemy(New_Total_Enemy)),
+                            retract(enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy)),
+                            asserta(enemy(N,Absis,Ordinat,Enemy_Weapon,0))
                         ; !,
                             write('Anda tidak memiliki peluru saat ini')
                         )
