@@ -38,7 +38,7 @@ enemy(10,11,11,shotgun,1).
 
 :- dynamic(ground/8). %untuk deskripsi peta.
 
-save:- open('save.pl',write,S), set_output(S),
+savegame(X):- open(X,write,S), set_output(S),
         write(':- dynamic(player/7).'), nl,
         write(':- dynamic(peta/1).'), nl,
         write(':- dynamic(count_enemy/1).'), nl,
@@ -48,14 +48,14 @@ save:- open('save.pl',write,S), set_output(S),
         write(':- dynamic(ground/8).'), nl,
         listing, close(S).
 
-saveload:-  retractall(player(_,_,_,_,_,_,_)),
+loadgame(X):-  retractall(player(_,_,_,_,_,_,_)),
             retractall(peta(_)),
             retractall(count_enemy(_)),
             retractall(count_move(_)),
             retractall(status_permainan(_)),
             retractall(enemy(_,_,_,_,_)),
             retractall(ground(_,_,_,_,_,_,_,_)),
-            consult('save.pl').
+            consult(X).
 
 %Update ketika health <0 atau musuh sudah mati semua, atau petak pemain sudah menjadi deadzone
 update_status_permainan :- player(Absis,Ordinat,Health,_,_,_,_),
@@ -877,7 +877,7 @@ take(X) :- update_status_permainan, status_permainan(Status),
             ; !,
                 write('Anda sudah kalah atau keluar dari permainan\n'),
                 fail
-            ).
+            ),!.
 
 %fungsi rekursif untuk drop ammo ke ground
 drop_ammo(1,X,Absis,Ordinat) :-
@@ -955,7 +955,7 @@ drop(X) :- update_status_permainan, status_permainan(Status),
             ; !,
                 write('Anda sudah kalah atau sudah keluar dari permainan\n'),
                 fail
-            ).
+            ),!.
 
 %Ganti parameter health pada player
 ganti_health(X) :- player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory),
@@ -1049,7 +1049,7 @@ use(X) :- update_status_permainan, status_permainan(Status),
             ; !,
                 write('Anda sudah kalah atau sudah keluar dari permainan\n'),
                 fail
-            ).
+            ),!.
 
 %Menghitung total damage yang akan diterima dari Enemy pada suatu petak
 hitung_damage([],0).
@@ -1105,4 +1105,4 @@ attack :- update_status_permainan, status_permainan(Status),
                 )
         ; !,
             write('Anda telah keluar dari permainan\n Perintah gagal dieksekusi')
-        ).
+        ),!.
