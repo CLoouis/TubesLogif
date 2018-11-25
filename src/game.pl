@@ -91,7 +91,7 @@ create_enemy(N) :- place_enemy(N), Nnew is N - 1, create_enemy(Nnew),!.
 
 update_enemy_position(0) :- write('').
 update_enemy_position(N) :- enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy), random(1,5,Random), peta(M), element_matriks(M,Absis,Ordinat,CEnemy),
-                            (CEnemy \= 'X' ->
+                            (CEnemy \= 'X', Status_Enemy = 1 ->
                                 (Random = 1 -> %musuh keatas
                                     Absis1 is Absis - 1,
                                     element_matriks(M,Absis1,Ordinat,C),
@@ -374,7 +374,7 @@ updatepeta :- kecilkanpeta, peta(X),player(Absis,Ordinat,_,_,_,_,_),
 
 %mengecilkan peta karena daerah disekeliling jadi tidak accessible
 kecilkanpeta :- count_move(R),
-            (R > 9, R < 20 -> !,
+            (R > 15, R < 30 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -392,7 +392,7 @@ kecilkanpeta :- count_move(R),
                     write('')
                 )
 
-            ; R > 19, R < 30 -> !,
+            ; R > 29, R < 45 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -410,7 +410,7 @@ kecilkanpeta :- count_move(R),
                 ;
                     write('')
                 )
-            ; R > 29, R < 40 -> !,
+            ; R > 44, R < 60 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -429,7 +429,7 @@ kecilkanpeta :- count_move(R),
                 ;
                     write('')
                 )
-            ; R > 39, R < 50 -> !,
+            ; R > 59, R < 75 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -450,7 +450,7 @@ kecilkanpeta :- count_move(R),
                 ;
                     write('')
                 )
-            ; R > 49 -> !,
+            ; R > 74 -> !,
                 retract(peta(M)),
                 asserta(peta([['X','X','X','X','X','X','X','X','X','X','X','X'],
                 ['X','X','X','X','X','X','X','X','X','X','X','X'],
@@ -515,7 +515,7 @@ look :- update_status_permainan, status_permainan(Status),
             look_koordinat(Absis1,Ordinat1,C1),look_koordinat(Absis1,Ordinat,C2),look_koordinat(Absis1,Ordinat2,C3),!,
             look_koordinat(Absis,Ordinat1,C4),look_koordinat(Absis,Ordinat,C5),look_koordinat(Absis,Ordinat2,C6),!,
             look_koordinat(Absis2,Ordinat1,C7),look_koordinat(Absis2,Ordinat,C8),look_koordinat(Absis2,Ordinat2,C9),!,
-            write('Anda berada di '),write(Nama),nl, write('Di petak Anda sekarang :\n'),
+            write('Anda berada di'),write(Nama),nl, write('Di petak Anda sekarang :\n'),
             (Enemy \= [] ->
                 panjang(Enemy,NBelmt_Enemy),
                 write('\tAda '), write(NBelmt_Enemy), write(' musuh'),nl
@@ -574,7 +574,7 @@ n :- update_status_permainan, status_permainan(Status),
             element_matriks(Mnew,Xnew2,Ynew,Selatan),
             element_matriks(Mnew,Xnew,Ynew1,Barat),
             element_matriks(Mnew,Xnew,Ynew2,Timur),
-            write('Anda berada di'),write(Nama_tempat),nl,
+            write('Anda berada di '),write(Nama_tempat),nl,
             (Utara = 'X' ->
                 write('Di utara adalah tempat mati.\n')
             ; !,
@@ -635,7 +635,7 @@ e :- update_status_permainan, status_permainan(Status),
             element_matriks(Mnew,Xnew2,Ynew,Selatan),
             element_matriks(Mnew,Xnew,Ynew1,Barat),
             element_matriks(Mnew,Xnew,Ynew2,Timur),
-            write('Anda berada di'),write(Nama_tempat),nl,
+            write('Anda berada di '),write(Nama_tempat),nl,
             (Utara = 'X' ->
                 write('Di utara adalah tempat mati.\n')
             ; !,
@@ -696,7 +696,7 @@ w :- update_status_permainan, status_permainan(Status),
             element_matriks(Mnew,Xnew2,Ynew,Selatan),
             element_matriks(Mnew,Xnew,Ynew1,Barat),
             element_matriks(Mnew,Xnew,Ynew2,Timur),
-            write('Anda berada di'),write(Nama_tempat),nl,
+            write('Anda berada di '),write(Nama_tempat),nl,
             (Utara = 'X' ->
                 write('Di utara adalah tempat mati.\n')
             ; !,
@@ -757,7 +757,7 @@ s :- update_status_permainan, status_permainan(Status),
             element_matriks(Mnew,Xnew2,Ynew,Selatan),
             element_matriks(Mnew,Xnew,Ynew1,Barat),
             element_matriks(Mnew,Xnew,Ynew2,Timur),
-            write('Anda berada di'),write(Nama_tempat),nl,
+            write('Anda berada di '),write(Nama_tempat),nl,
             (Utara = 'X' ->
                 write('Di utara adalah tempat mati.\n')
             ; !,
@@ -853,7 +853,8 @@ take(X) :- update_status_permainan, status_permainan(Status),
                     )
                 ; !,
                     write(X), write(' tidak terdapat pada ground\n')
-                )
+                ),update_enemy_position(10),
+                retract(count_move(Movement)), New_Movement is Movement + 1, asserta(count_move(New_Movement))
             ; !,
                 write('Anda sudah kalah atau keluar dari permainan\n'),
                 fail
@@ -900,7 +901,8 @@ drop(X) :- update_status_permainan, status_permainan(Status),
                         gabung(Armor_ground,[X],New_Armor_ground),
                         retract(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,Armor_ground,Ammo_ground)),
                         asserta(ground(Absis,Ordinat,Nama,Enemy,Medicine_ground,Weapon_ground,New_Armor_ground,Ammo_ground))
-                    )
+                    ), update_enemy_position(10),
+                    retract(count_move(Movement)), New_Movement is Movement + 1, asserta(count_move(New_Movement))
                 ; X = Weapon_player ->
                     %Weapon di ground bertambah
                     player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory),
@@ -915,8 +917,9 @@ drop(X) :- update_status_permainan, status_permainan(Status),
                             drop_ammo(Ammo_player,pelurupistol,Absis,Ordinat),
                             retract(player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory)),
                             asserta(player(Absis,Ordinat,Health,Armor_player,none,0,Inventory))
-                    )
-                ; !, X = ammo ->
+                    ),update_enemy_position(10),
+                    retract(count_move(Movement)), New_Movement is Movement + 1, asserta(count_move(New_Movement))
+                ; !, X = 'ammo' ->
                     (Weapon_player = shotgun ->
                             drop_ammo(Ammo_player,pelurushotgun,Absis,Ordinat),
                             retract(player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory)),
@@ -925,7 +928,8 @@ drop(X) :- update_status_permainan, status_permainan(Status),
                             drop_ammo(Ammo_player,pelurupistol,Absis,Ordinat),
                             retract(player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory)),
                             asserta(player(Absis,Ordinat,Health,Armor_player,Weapon_player,0,Inventory))
-                    )
+                    ),update_enemy_position(10),
+                    retract(count_move(Movement)), New_Movement is Movement + 1, asserta(count_move(New_Movement))
                 ; !,
                     write('Perintah gagal dilakasanakan')
                 )
@@ -1018,7 +1022,8 @@ use(X) :- update_status_permainan, status_permainan(Status),
                             asserta(player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,New_Inventory)),
                             ganti_armor(10)
                         )
-                    )
+                    ), update_enemy_position(10),
+                    retract(count_move(Movement)), New_Movement is Movement + 1, asserta(count_move(New_Movement))
                 ; !,
                     write(X), write(' tidak ada di inventori\n')
                 )
@@ -1066,7 +1071,10 @@ attack :- update_status_permainan, status_permainan(Status),
                             ),
                             asserta(count_enemy(New_Total_Enemy)),
                             retract(enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy)),
-                            asserta(enemy(N,Absis,Ordinat,Enemy_Weapon,0))
+                            asserta(enemy(N,Absis,Ordinat,Enemy_Weapon,0)),
+
+                            update_enemy_position(10),
+                            retract(count_move(Movement)), New_Movement is Movement + 1, asserta(count_move(New_Movement))
                         ; !,
                             write('Anda tidak memiliki peluru saat ini')
                         )
