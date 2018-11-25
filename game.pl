@@ -56,8 +56,6 @@ loadgame(X):-  retractall(player(_,_,_,_,_,_,_)),
             retractall(enemy(_,_,_,_,_)),
             retractall(ground(_,_,_,_,_,_,_,_)),
             consult(X).
-            
-command :- nl, write('> '), read(Word), Word, (status_permainan(off), write('Terima kasih telah bermain!'); command), !. 
 
 %Update ketika health <0 atau musuh sudah mati semua, atau petak pemain sudah menjadi deadzone
 update_status_permainan :- player(Absis,Ordinat,Health,_,_,_,_),
@@ -65,19 +63,13 @@ update_status_permainan :- player(Absis,Ordinat,Health,_,_,_,_),
                         peta(Map), element_matriks(Map,Absis,Ordinat,Petak_Pemain),
                         (Health =< 0 ->
                             retract(status_permainan(X)),
-                            asserta(status_permainan(off)),
-                            write('Anda telah kalah. '),
-                            nl
+                            asserta(status_permainan(off))
                         ; Enemy = 0 ->
                             retract(status_permainan(X)),
-                            asserta(status_permainan(off)),
-                            write('Anda telah menang. '),
-                            nl
+                            asserta(status_permainan(off))
                         ; Petak_Pemain = 'X' ->
                             retract(status_permainan(X)),
-                            asserta(status_permainan(off)),
-                            write('Anda telah terkena deadzone. '),
-                            nl
+                            asserta(status_permainan(off))
                         ; !
                         ).
 % print_all_ground :- ground(Absis,Ordinat,Nama,Enemy,Medicine,Weapon,Armor,Ammo),
@@ -85,7 +77,7 @@ update_status_permainan :- player(Absis,Ordinat,Health,_,_,_,_),
 
 %Mengupdate ground berdasarkan data dari enemy
 update_enemy_ground(0) :- write('').
-update_enemy_ground(N) :- enemy(N,Absis,Ordinat,Enemy_Weapon,_),
+update_enemy_ground(N) :- enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy),
                 ground(Absis,Ordinat,Nama,Enemy,Medicine,Weapon,Armor,Ammo),
                 gabung(Enemy,[Enemy_Weapon],New_Enemy),
                 retract(ground(Absis,Ordinat,Nama,Enemy,Medicine,Weapon,Armor,Ammo)),
@@ -306,8 +298,7 @@ start :- write('Welcome to the battlefield!\n'),
     asserta(count_move(0)),
     retract(count_enemy(_)),
     asserta(count_enemy(10)),
-    update_enemy_ground(10),
-    command.
+    update_enemy_ground(10).
 
 %Menampilkan daftar perintah yang dapat ditampilkan, jika status permainan off maka
 %yang ditampilkan hanya menu yang bisa dijalankan saat sudah keluar permainan
@@ -414,7 +405,7 @@ kecilkanpeta :- count_move(R),
                 ['X','X','X','X','X','X','X','X','X','X','X','X']])),
                 update_count_enemy(10), count_enemy(N_enemy),
                 (N_enemy = 0 ->
-                        write(''),
+                        write('SELAMAT ANDA MENANG'),
                         update_status_permainan
                 ;
                     write('')
@@ -433,7 +424,7 @@ kecilkanpeta :- count_move(R),
                 ['X','X','X','X','X','X','X','X','X','X','X','X']])),
                 update_count_enemy(10),count_enemy(N_enemy),
                 (N_enemy = 0 ->
-                        write(''),
+                        write('SELAMAT ANDA MENANG'),
                         update_status_permainan
                 ;
                     write('')
@@ -452,7 +443,7 @@ kecilkanpeta :- count_move(R),
                 ['X','X','X','X','X','X','X','X','X','X','X','X']])),
                 update_count_enemy(10),count_enemy(N_enemy),
                 (N_enemy = 0 ->
-                        write(''),
+                        write('SELAMAT ANDA MENANG'),
                         update_status_permainan
                 ;
                     write('')
@@ -473,7 +464,7 @@ kecilkanpeta :- count_move(R),
                 ['X','X','X','X','X','X','X','X','X','X','X','X']])),
                 update_count_enemy(10),count_enemy(N_enemy),
                 (N_enemy = 0 ->
-                        write(''),
+                        write('SELAMAT ANDA MENANG'),
                         update_status_permainan
                 ;
                     write('')
@@ -494,7 +485,7 @@ kecilkanpeta :- count_move(R),
                 ['X','X','X','X','X','X','X','X','X','X','X','X']])),
                 update_count_enemy(10),count_enemy(N_enemy),
                 (N_enemy = 0 ->
-                        write(''),
+                        write('SELAMAT ANDA MENANG'),
                         update_status_permainan
                 ;
                     write('')
@@ -574,7 +565,7 @@ look :- update_status_permainan, status_permainan(Status),
             write(C4),write(' '),write(C5),write(' '),write(C6),nl,
             write(C7),write(' '),write(C8),write(' '),write(C9)
         ; !,
-            write('')
+            write('Anda telah keluar permainan atau telah kalah')
         ).
 
 
@@ -636,7 +627,7 @@ n :- update_status_permainan, status_permainan(Status),
             update_enemy_position(10),!
         )
     ; !,
-        write(''),
+        write('Anda sudah kalah atau sudah keluar dari permainan\n'),
         fail
     ).
 
@@ -697,7 +688,7 @@ e :- update_status_permainan, status_permainan(Status),
             update_enemy_position(10),!
         )
     ; !,
-        write(''),
+        write('Anda sudah kalah atau sudah keluar dari permainan\n'),
         fail
     ).
 
@@ -758,7 +749,7 @@ w :- update_status_permainan, status_permainan(Status),
             update_enemy_position(10),!
         )
     ; !,
-        write(''),
+        write('Anda sudah kalah atau sudah keluar dari permainan\n'),
         fail
     ).
 
@@ -819,7 +810,7 @@ s :- update_status_permainan, status_permainan(Status),
             update_enemy_position(10),!
         )
     ; !,
-        write(''),
+        write('Anda sudah kalah atau sudah keluar dari permainan\n'),
         fail
     ).
 
@@ -962,7 +953,7 @@ drop(X) :- update_status_permainan, status_permainan(Status),
                     write('Perintah gagal dilakasanakan')
                 )
             ; !,
-                write(''),
+                write('Anda sudah kalah atau sudah keluar dari permainan\n'),
                 fail
             ),!.
 
@@ -1056,7 +1047,7 @@ use(X) :- update_status_permainan, status_permainan(Status),
                     write(X), write(' tidak ada di inventori\n')
                 )
             ; !,
-                write(''),
+                write('Anda sudah kalah atau sudah keluar dari permainan\n'),
                 fail
             ),!.
 
@@ -1103,7 +1094,7 @@ attack :- update_status_permainan, status_permainan(Status),
                                 write('')
                             ),
                             asserta(count_enemy(New_Total_Enemy)),
-                            retract(enemy(N,Absis,Ordinat,Enemy_Weapon,_)),
+                            retract(enemy(N,Absis,Ordinat,Enemy_Weapon,Status_Enemy)),
                             asserta(enemy(N,Absis,Ordinat,Enemy_Weapon,0)),
 
                             update_enemy_position(10),
