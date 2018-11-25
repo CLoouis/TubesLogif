@@ -5,6 +5,7 @@ deklaratif Prolog (gunakan GNU Prolog).
 
 ![alt text](https://github.com/CLoouis/TubesLogif/blob/master/tubes.PNG)
 
+Masukkan ['game.pl']
 Ketik:
 start. -- Untuk memulai permainan. 
 quit. -- Keluar dari permainan
@@ -16,5 +17,5 @@ drop(Object). -- Menjatuhkan sebuah object
 use(Object). -- Menggunakan sebuah object
 attack. -- Menyerang musuh yang terdapat di petak yang sama
 status. -- Menampilkan status permainan
-save(Filename). -- Save permainan
-load(Filename). -- Load permainan sebelumnya
+savegame('FileName.pl'). -- Save permainan di FileName.pl
+loadgame('FileName.pl'). -- Load permainan di FileName.pl
