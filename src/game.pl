@@ -1069,8 +1069,13 @@ attack :- update_status_permainan, status_permainan(Status),
                     %Cek damage ke User
                     hitung_damage(Enemy,Damage),
                     True_Damage is (-1)*Damage + Armor_player,
+                    (Ammo_player > 0 ->
+                        New_Ammo_player is Ammo_player - 1
+                    ;
+                        New_Ammo_player = 0
+                    ),
                     retract(player(Absis,Ordinat,Health,Armor_player,Weapon_player,Ammo_player,Inventory)),
-                    asserta(player(Absis,Ordinat,Health,0,Weapon_player,Ammo_player,Inventory)),
+                    asserta(player(Absis,Ordinat,Health,0,Weapon_player,New_Ammo_player,Inventory)),
                     ganti_health(True_Damage),
                     (Weapon_player \= none ->
                         (Ammo_player \= 0 ->
